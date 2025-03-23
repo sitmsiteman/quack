@@ -2018,7 +2018,7 @@ For PLT-style when `quack-pltish-fontify-keywords-p' is non-nil."
                                 open-pt (1+ open-pt))
                                0)))
           (when (= open-char other-open)
-            (delete-backward-char 1)
+            (delete-char -1)
             (insert other-close))))))
   (when blink-paren-function (funcall blink-paren-function)))
 
