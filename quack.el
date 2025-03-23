@@ -3113,17 +3113,17 @@ Can be used in your `~/.emacs' file something like this:
           ;; The following code may be revived if anyone reports problems with
           ;; the use of `special-display-popup-frame'.
           ;;
-          ((eq quack-switch-to-scheme-method 'own-frame)
-           (let ((pop-up-frames                t)
-                 (same-window-buffer-names     nil)
-                 (same-window-regexps          nil)
-                 (special-display-buffer-names nil)
-                 (special-display-regexps      nil))
-             (switch-to-buffer (pop-to-buffer repl-buf))))
-
           ;; ((eq quack-switch-to-scheme-method 'own-frame)
-          ;;  (quack-force-frame-switch-to-window
-          ;;   (display-buffer-pop-up-frame repl-buf)))
+          ;;  (let ((pop-up-frames                t)
+          ;;        (same-window-buffer-names     nil)
+          ;;        (same-window-regexps          nil)
+          ;;        (special-display-buffer-names nil)
+          ;;        (special-display-regexps      nil))
+          ;;    (switch-to-buffer (pop-to-buffer repl-buf))))
+
+          ((eq quack-switch-to-scheme-method 'own-frame)
+           (quack-force-frame-switch-to-window
+            (display-buffer-pop-up-frame repl-buf nil)))
 
           (t (error "Invalid quack-switch-to-scheme-method: %S"
                     quack-switch-to-scheme-method)))))
