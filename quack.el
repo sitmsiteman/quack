@@ -3098,7 +3098,7 @@ Can be used in your `~/.emacs' file something like this:
                               scheme-buffer
                               (get-buffer scheme-buffer)))))
     (cond ((not repl-buf)
-           (error (concat "No process current buffer."
+           (error (concat "No process currenbt buffer."
                           " Set `scheme-buffer' or execute `run-scheme'")))
 
           ((or (not quack-switch-to-scheme-method)
@@ -4309,7 +4309,7 @@ Provided by Quack: http://www.neilvandyke.org/quack/"
     (set-buffer-modified-p saved-bmp))
   (quack-when-xemacs
    (make-variable-buffer-local 'write-contents-hooks))
-  (add-hook 'write-contents-hooks 'quack-prevent-pltfile-write)
+  (add-hook 'write-contents-functions 'quack-prevent-pltfile-write)
   (run-hooks 'quack-pltfile-mode-hook)
   (message "Decoded PLT package.  %s"
            (substitute-command-keys
