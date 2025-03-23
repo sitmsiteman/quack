@@ -4287,12 +4287,12 @@ Can be used in your `~/.emacs' file something like this:
 ;; TODO: Make a menu map for pltfile-mode.
 
 (defun quack-pltfile-mode ()
-  (interactive)
   "Major mode for viewing PLT Scheme `.plt' package files.
 
 \\{quack-pltfile-mode-map}
 
 Provided by Quack: http://www.neilvandyke.org/quack/"
+  (interactive)
   (kill-all-local-variables)
   (put 'quack-pltfile-mode 'mode-class 'special)
   (setq major-mode 'quack-pltfile-mode)
