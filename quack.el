@@ -1,4 +1,4 @@
-;;; quack.el --- enhanced support for editing and running Scheme code
+;;; quack.el --- enhanced support for editing and running Scheme code -*- lexical-binding: t; -*-
 
 (defconst quack-copyright    "Copyright (C) 2002-2012, 2016, 2018 Neil Van Dyke")
 (defconst quack-copyright-2  "Portions Copyright (C) Free Software Foundation")
