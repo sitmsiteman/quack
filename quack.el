@@ -3098,7 +3098,7 @@ Can be used in your `~/.emacs' file something like this:
                               scheme-buffer
                               (get-buffer scheme-buffer)))))
     (cond ((not repl-buf)
-           (error (concat "No process currenbt buffer."
+           (error (concat "No process current buffer."
                           " Set `scheme-buffer' or execute `run-scheme'")))
 
           ((or (not quack-switch-to-scheme-method)
@@ -3110,20 +3110,9 @@ Can be used in your `~/.emacs' file something like this:
           ((eq quack-switch-to-scheme-method 'other-window)
            (switch-to-buffer-other-window repl-buf))
 
-          ;; The following code may be revived if anyone reports problems with
-          ;; the use of `special-display-popup-frame'.
-          ;;
-          ;; ((eq quack-switch-to-scheme-method 'own-frame)
-          ;;  (let ((pop-up-frames                t)
-          ;;        (same-window-buffer-names     nil)
-          ;;        (same-window-regexps          nil)
-          ;;        (special-display-buffer-names nil)
-          ;;        (special-display-regexps      nil))
-          ;;    (switch-to-buffer (pop-to-buffer repl-buf))))
-
           ((eq quack-switch-to-scheme-method 'own-frame)
            (quack-force-frame-switch-to-window
-            (display-buffer-pop-up-frame repl-buf nil)))
+            (display-buffer-pop-up-frame repl-buf nil))) ; not sure works as intended.
 
           (t (error "Invalid quack-switch-to-scheme-method: %S"
                     quack-switch-to-scheme-method)))))
