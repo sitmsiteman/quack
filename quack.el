@@ -3123,7 +3123,7 @@ Can be used in your `~/.emacs' file something like this:
 
           ((eq quack-switch-to-scheme-method 'own-frame)
            (quack-force-frame-switch-to-window
-            (display-buffer-pop-up-frame repl-buf)))
+            (display-buffer repl-buf (display-buffer-pop-up-frame))))
 
           (t (error "Invalid quack-switch-to-scheme-method: %S"
                     quack-switch-to-scheme-method)))))
