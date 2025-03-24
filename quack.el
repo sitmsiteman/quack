@@ -3489,7 +3489,7 @@ Can be used in your `~/.emacs' file something like this:
     (quack-when-gnuemacs
      (unless (assq 'Quack menu-bar-final-items)
        (setq menu-bar-final-items (cons 'Quack menu-bar-final-items)))
-          (easy-menu-define quack-global-menu global-map ""
+     (easy-menu-define quack-global-menu global-map ""
        quack-global-menuspec))
     (quack-when-xemacs
      ;; Die! Die! Die!
@@ -3502,7 +3502,7 @@ Can be used in your `~/.emacs' file something like this:
      ;;))
      (delete-menu-item '("Quack") current-menubar)
      (add-submenu nil quack-global-menuspec "Help" current-menubar)
-     (set-menubar-dirty-flag)))
+     (set-menubar-dirty-flag))))
 
 ;; TODO: We should make sure the user's custom settings have been loaded
 ;; before we do this.
