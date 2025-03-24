@@ -3488,16 +3488,9 @@ Can be used in your `~/.emacs' file something like this:
   (when quack-global-menu-p
     (quack-when-gnuemacs
      (unless (assq 'Quack menu-bar-final-items)
-       (setq menu-bar-final-items
-        (let ((items (copy-sequence menu-bar-final-items)))
-          (if (memq 'Help items)
-              (let ((help-pos (cl-position 'Help items)))
-                (append (cl-subseq items 0 help-pos)
-                        '(Quack)
-                        (cl-subseq items help-pos)))
-            (cons 'Quack items))))
-       (easy-menu-define quack-global-menu global-map ""
-	 quack-global-menuspec)))
+       (setq menu-bar-final-items (cons 'Quack menu-bar-final-items)))
+          (easy-menu-define quack-global-menu global-map ""
+       quack-global-menuspec))
     (quack-when-xemacs
      ;; Die! Die! Die!
      ;;(mapcar (function (lambda (n)
@@ -3509,7 +3502,7 @@ Can be used in your `~/.emacs' file something like this:
      ;;))
      (delete-menu-item '("Quack") current-menubar)
      (add-submenu nil quack-global-menuspec "Help" current-menubar)
-     (set-menubar-dirty-flag))))
+     (set-menubar-dirty-flag)))
 
 ;; TODO: We should make sure the user's custom settings have been loaded
 ;; before we do this.
