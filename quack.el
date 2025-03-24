@@ -3531,7 +3531,8 @@ Can be used in your `~/.emacs' file something like this:
 (quack-when-gnuemacs
  (let ((map (make-sparse-keymap)))
    (setq quack-scheme-mode-menu nil)
-   (easy-menu-define quack-scheme-mode-menu map ""
+   (easy-menu-define quack-scheme-mode-menu scheme-mode-map
+     "Quack menu used when 'shcme-mode' is activated."
      quack-scheme-mode-menuspec)
    (define-key scheme-mode-map [menu-bar scheme]
      (cons "Scheme"
