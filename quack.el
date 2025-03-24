@@ -3482,12 +3482,9 @@ Can be used in your `~/.emacs' file something like this:
   (when quack-global-menu-p
     (quack-when-gnuemacs
      ;; (unless (assq 'Quack menu-bar-final-items)
-     ;;   (setq menu-bar-final-items (cons 'Quack menu-bar-final-items))
-     ;;   )
+     ;;   (setq menu-bar-final-items (cons 'Quack menu-bar-final-items)))
      (easy-menu-define quack-global-menu global-map ""
-       quack-global-menuspec)
-     (cons "Quack" (or (lookup-key map [menu-bar Quack])
-		       (lookup-key map [menu-bar quack]))))
+       quack-global-menuspec))
     (quack-when-xemacs
      ;; Die! Die! Die!
      ;;(mapcar (function (lambda (n)
