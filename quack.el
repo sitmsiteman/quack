@@ -3496,9 +3496,8 @@ Can be used in your `~/.emacs' file something like this:
                         '(Quack)
                         (cl-subseq items help-pos)))
             (cons 'Quack items))))
-
        (easy-menu-define quack-global-menu global-map ""
-	 quack-global-menuspec))
+	 quack-global-menuspec)))
     (quack-when-xemacs
      ;; Die! Die! Die!
      ;;(mapcar (function (lambda (n)
