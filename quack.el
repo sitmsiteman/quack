@@ -3489,7 +3489,7 @@ Can be used in your `~/.emacs' file something like this:
     (quack-when-gnuemacs
      ;; (unless (cl-position 'Quack menu-bar-final-items)
      ;;   (push 'Quack menu-bar-final-items))
-     (push 'Quack menu-bar-final-items))
+     (push 'Quack menu-bar-final-items)
      (easy-menu-define quack-global-menu global-map ""
        quack-global-menuspec))
     (quack-when-xemacs
