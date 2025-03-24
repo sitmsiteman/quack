@@ -3488,7 +3488,8 @@ Can be used in your `~/.emacs' file something like this:
   (when quack-global-menu-p
     (quack-when-gnuemacs
      (unless (assq 'Quack menu-bar-final-items)
-       (setq menu-bar-final-items (add-to-list menu-bar-final-items 'Quack t)))
+       (setq menu-bar-final-items (add-to-list 'Quack menu-bar-final-items
+				   )))
      (easy-menu-define quack-global-menu global-map ""
        quack-global-menuspec))
     (quack-when-xemacs
