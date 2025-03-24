@@ -3487,15 +3487,10 @@ Can be used in your `~/.emacs' file something like this:
 (defun quack-install-global-menu ()
   (when quack-global-menu-p
     (quack-when-gnuemacs
+     (unless (assq 'Quack menu-bar-final-items)
+       (setq menu-bar-final-items (cons 'Quack menu-bar-final-items)))
      (easy-menu-define quack-global-menu global-map ""
-       quack-global-menuspec)
-     ;; (unless (cl-position 'Quack menu-bar-final-items)
-     ;;   (push 'Quack menu-bar-final-items))
-     (define-key-after (lookup-key global-map [menu-bar])
-       [quack-global]
-       (cons "Quack" quack-global-menu 'help)
-       )
-     )
+       quack-global-menuspec))
     (quack-when-xemacs
      ;; Die! Die! Die!
      ;;(mapcar (function (lambda (n)
