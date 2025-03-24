@@ -3487,8 +3487,9 @@ Can be used in your `~/.emacs' file something like this:
 (defun quack-install-global-menu ()
   (when quack-global-menu-p
     (quack-when-gnuemacs
-     (unless (cl-position 'Quack menu-bar-final-items)
-       (push 'Quack menu-bar-final-items))
+     ;; (unless (cl-position 'Quack menu-bar-final-items)
+     ;;   (push 'Quack menu-bar-final-items))
+     (push 'Quack menu-bar-final-items))
      (easy-menu-define quack-global-menu global-map ""
        quack-global-menuspec))
     (quack-when-xemacs
