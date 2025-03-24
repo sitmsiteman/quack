@@ -3365,16 +3365,22 @@ Can be used in your `~/.emacs' file something like this:
 
 (defconst quack-browser-radio-alist
   '((nil                                . "(Browse-URL Default)")
-    (browse-url-galeon                  . "Galeon")
-    (browse-url-mozilla                 . "Mozilla")
+    (browse-url-xdg-open                . "freedesktop.org xdg-open")
+    (browse-url-firefox                 . "Firefox")
+    (browse-url-chrome                  . "Chrome")
+    (browse-url-chromium                . "Chromium")
+    (browse-url-epiphany                . "Epiphany")
+    (eww-browse-url                     . "Emacs Web Wowser")
+    (browse-url-text-browser            . "Any text browser")
+    (quack-w3m-browse-url-other-window  . "w3m (in other window)")
+    (browse-url-elinks                  . "Elinks")
     (browse-url-kde                     . "KDE Konqueror")
-    (browse-url-netscape                . "Netscape Navigator")
-    (browse-url-w3                      . "Emacs W3")
-    (w3m-browse-url                     . "W3M")
-    (quack-w3m-browse-url-other-window  . "W3M (in other window)")
-    (browse-url-lynx-xterm              . "Lynx in Xterm")
-    (browse-url-lynx-emacs              . "Lynx in Emacs")
-    (browse-url-default-windows-browser . "MS Windows Default")))
+    (browse-url-generic                 . "arbitrary")
+    (browse-url-webpositive             . "WebPositive")
+    (browse-url-default-windows-browser . "MS Windows Default")
+    (browse-url-default-macosx-browser  . "macOS browser")
+    (browse-url-default-android-browser . "Android")
+    ))
 
 (defconst quack-global-menuspec
   `("Quack"
@@ -3486,8 +3492,7 @@ Can be used in your `~/.emacs' file something like this:
      (easy-menu-define quack-global-menu global-map "Quack"
        quack-global-menuspec)
      (define-key-after global-map [menu-bar quack]
-		 (cons "Quack" (make-sparse-keymap "Quack")) 'Tools)
-     )
+		 (cons "Quack" (make-sparse-keymap "Quack")) 'Tools))
     (quack-when-xemacs
      ;; Die! Die! Die!
      ;;(mapcar (function (lambda (n)
