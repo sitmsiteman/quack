@@ -3489,7 +3489,7 @@ Can be used in your `~/.emacs' file something like this:
     (quack-when-gnuemacs
      ;; (unless (assq 'Quack menu-bar-final-items)
      ;;   (setq menu-bar-final-items (cons 'Quack menu-bar-final-items)))
-     (easy-menu-define quack-global-menu global-map "Quack"
+     (easy-menu-define quack-global-menu global-map ""
        quack-global-menuspec)
      (define-key-after global-map [menu-bar quack]
 		 (cons "Quack" (make-sparse-keymap "Quack")) 'Tools))
