@@ -3485,9 +3485,11 @@ Can be used in your `~/.emacs' file something like this:
      ;;   (setq menu-bar-final-items (cons 'Quack menu-bar-final-items)))
      (easy-menu-define quack-global-menu global-map "Quack"
        quack-global-menuspec)
-     (define-key-after global-map [menu-bar quack-global-menu]
-       (cons "Quack" (make-sparse-keymap "Quack")) 'Tools
-       ))
+     (define-key global-map [menu-bar quack]
+     (cons "Quack"
+           (or (lookup-key map [menu-bar Quack])
+               (lookup-key map [menu-bar quack]))))
+     )
     (quack-when-xemacs
      ;; Die! Die! Die!
      ;;(mapcar (function (lambda (n)
