@@ -3481,8 +3481,9 @@ Can be used in your `~/.emacs' file something like this:
 (defun quack-install-global-menu ()
   (when quack-global-menu-p
     (quack-when-gnuemacs
-     (unless (assq 'Quack menu-bar-final-items)
-       (setq menu-bar-final-items (cons 'Quack menu-bar-final-items)))
+     ;; (unless (assq 'Quack menu-bar-final-items)
+     ;;   (setq menu-bar-final-items (cons 'Quack menu-bar-final-items))
+     ;;   )
      (easy-menu-define quack-global-menu global-map ""
        quack-global-menuspec))
     (quack-when-xemacs
@@ -3531,8 +3532,7 @@ Can be used in your `~/.emacs' file something like this:
 (quack-when-gnuemacs
  (let ((map (make-sparse-keymap)))
    (setq quack-scheme-mode-menu nil)
-   (easy-menu-define quack-scheme-mode-menu scheme-mode-map
-     "Quack menu used when 'shcme-mode' is activated."
+   (easy-menu-define quack-scheme-mode-menu map ""
      quack-scheme-mode-menuspec)
    (define-key scheme-mode-map [menu-bar scheme]
      (cons "Scheme"
