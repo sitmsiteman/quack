@@ -3491,7 +3491,10 @@ Can be used in your `~/.emacs' file something like this:
        quack-global-menuspec)
      ;; (unless (cl-position 'Quack menu-bar-final-items)
      ;;   (push 'Quack menu-bar-final-items))
-     (easy-menu-add-item nil '() quack-global-menu "help-menu")
+     (define-key-after (lookup-key global-map [menu-bar])
+       [quack-global]
+       (cons "Quack" quack-global-menu 'help)
+       )
      )
     (quack-when-xemacs
      ;; Die! Die! Die!
